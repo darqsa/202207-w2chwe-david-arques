@@ -1,30 +1,24 @@
-const canvasGrid = (canvasSize) => {
+import getRandomCells from "./get-random-cells.js";
+import info from "./info.js";
+
+const canvasGrid = () => {
   const canvas = document.querySelector("canvas");
   const ctx = canvas.getContext("2d");
-  const randomCells = [];
-  const cellProportion = canvasSize / 60;
-  const gridLength = canvasSize / cellProportion;
 
-  for (let i = 0; i < gridLength; i += 1) {
-    randomCells[i] = [null];
-    for (let j = 0; j < gridLength; j += 1) {
-      randomCells[i][j] = Math.floor(Math.random() * 1.2);
-    }
-  }
-
-  for (let columns = 0; columns < gridLength; columns += 1) {
-    for (let rows = 0; rows < gridLength; rows += 1) {
-      const cell = randomCells[columns][rows];
-
+  for (let columns = 0; columns < info.canvasInfo.gridLength(); columns += 1) {
+    for (let rows = 0; rows < info.canvasInfo.gridLength(); rows += 1) {
+      const cell = getRandomCells[columns][rows];
       ctx.beginPath();
       ctx.rect(
-        columns * cellProportion,
-        rows * cellProportion,
-        cellProportion,
-        cellProportion
+        columns * info.canvasInfo.cellProportion(),
+        rows * info.canvasInfo.cellProportion(),
+        info.canvasInfo.cellProportion(),
+        info.canvasInfo.cellProportion()
       );
       ctx.fillStyle = cell ? "black" : "white";
       ctx.fill();
+      ctx.strokeStyle = "#8B948D";
+      ctx.stroke();
     }
   }
 };
