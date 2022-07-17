@@ -1,10 +1,19 @@
-const deadCell = (appendedCells) => {
-  if (appendedCells < 2) {
+const deadCell = (cell, appendedCells) => {
+  if (cell === 0 && appendedCells === 3) {
+    return 1;
+  }
+  if (cell === 1 && appendedCells < 2) {
     return 0;
   }
-  if (appendedCells > 3) {
+  if (cell === 1 && appendedCells > 3) {
     return 0;
   }
-  return 1;
+  if (cell === 1 && appendedCells === 2) {
+    return 1;
+  }
+  if (cell === 1 && appendedCells === 3) {
+    return 1;
+  }
+  return 0;
 };
 export default deadCell;
