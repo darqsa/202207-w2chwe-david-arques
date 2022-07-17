@@ -1,5 +1,6 @@
 import info from "./info.js";
 import getRandomCells from "./get-random-cells.js";
+import deadCell from "./dead-cell-condition.js";
 
 const nextTurn = () => {
   const nextGrid = getRandomCells.map((gridArray) => [...gridArray]);
@@ -12,10 +13,8 @@ const nextTurn = () => {
           if (i === 0 && j === 0) {
             // eslint-disable-next-line no-continue
             continue;
-          } else if (cell[columns+i][rows+j] === 1) {
-            appendedCells+=1
-              
-            }
+          } else if (cell[columns + i][rows + j] === 1) {
+            appendedCells += 1;
           }
         }
       }
