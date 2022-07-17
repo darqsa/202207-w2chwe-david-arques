@@ -18,6 +18,7 @@ const nextTurn = () => {
           }
         }
       }
+      nextGrid[columns][rows] = deadCell(appendedCells);
     }
   }
 };
