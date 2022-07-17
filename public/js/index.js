@@ -1,3 +1,5 @@
-import canvasGrid from "./grid.js";
+import nextTurn from "./next-turn.js";
+import getRandomCells from "./get-random-cells.js";
 
-canvasGrid();
+getRandomCells();
+nextTurn();
