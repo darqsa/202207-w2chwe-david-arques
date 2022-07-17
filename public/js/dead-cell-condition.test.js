@@ -21,4 +21,14 @@ describe("Given the deadCell function", () => {
       expect(result).toBe(expectedResult);
     });
   });
+  describe("When it recieves 4", () => {
+    test("Then it should return 0", () => {
+      const number1 = 4;
+      const expectedResult = 0;
+
+      const result = deadCell(number1);
+
+      expect(result).toBe(expectedResult);
+    });
+  });
 });
